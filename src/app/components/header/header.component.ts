@@ -1,4 +1,4 @@
-import {Component, Input} from '@angular/core';
+import {Component, EventEmitter, Input, Output} from '@angular/core';
 import {User} from '../../model/user.interface';
 
 @Component({
@@ -10,7 +10,15 @@ export class HeaderComponent {
 
   @Input() user: User | undefined;
 
+  @Output() loginClicked: EventEmitter<void> = new EventEmitter<void>();
+
   constructor() { }
+
+  onLoginClicked($event: Event): void {
+    $event.stopPropagation();
+    $event.preventDefault();
+    this.loginClicked.emit();
+  }
 
 
 }
