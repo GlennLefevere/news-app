@@ -1,15 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {User} from '../../model/user.interface';
 
 @Component({
   selector: 'news-header',
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
+
+  @Input() user: User | undefined;
 
   constructor() { }
 
-  ngOnInit(): void {
-  }
 
 }

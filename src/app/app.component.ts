@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
+import {User} from './model/user.interface';
 
 @Component({
   selector: 'news-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'news-app';
+
+  user: User = {
+    firstName: 'Jos',
+    lastName: 'Verstappen',
+    email: 'Jos.de.bos@verstappen.nl'
+  } as User;
+
 }
