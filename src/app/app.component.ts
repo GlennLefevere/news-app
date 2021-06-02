@@ -9,10 +9,14 @@ import {User} from './model/user.interface';
 export class AppComponent {
   title = 'news-app';
 
-  user: User = {
-    firstName: 'Jos',
-    lastName: 'Verstappen',
-    email: 'Jos.de.bos@verstappen.nl'
-  } as User;
+  user: User | undefined;
+
+  onLoginClicked() {
+    this.user = {
+      firstName: 'Jos',
+      lastName: 'Verstappen',
+      email: 'Jos.de.bos@verstappen.nl'
+    } as User;
+  }
 
 }
