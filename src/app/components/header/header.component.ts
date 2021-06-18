@@ -8,7 +8,7 @@ import {User} from '../../model/user.interface';
 })
 export class HeaderComponent {
 
-  @Input() user: User | undefined;
+  @Input() user: User | null = null;
 
   @Output() loginClicked: EventEmitter<void> = new EventEmitter<void>();
 
