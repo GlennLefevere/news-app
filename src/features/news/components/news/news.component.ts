@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {NewsService} from "../../services/news.service";
 
 @Component({
   selector: 'news-news',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewsComponent implements OnInit {
 
-  constructor() { }
+  constructor(private readonly newsService: NewsService) { }
 
   ngOnInit(): void {
   }
