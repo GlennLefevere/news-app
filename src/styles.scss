@@ -3,6 +3,14 @@
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';
 
+a {
+  color: #ffffff;
+
+  &:hover, &.active {
+    color: darken(#ffffff, 20%);
+  }
+}
+
 img.fav-icon {
   height: 2rem;
 }
