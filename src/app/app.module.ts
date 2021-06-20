@@ -6,11 +6,13 @@ import {AppComponent} from './app.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import {HeaderComponent} from './components/header/header.component';
 import {HttpClientModule} from "@angular/common/http";
+import { EditorPipe } from './pipes/editor.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    EditorPipe,
   ],
   imports: [
     BrowserModule,
