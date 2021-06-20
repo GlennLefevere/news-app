@@ -14,3 +14,8 @@ a {
 img.fav-icon {
   height: 2rem;
 }
+
+div.news-grid {
+  display: grid;
+  grid-template-columns: repeat();
+}

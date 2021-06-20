@@ -1,7 +1,7 @@
 import {Component} from '@angular/core';
 import {User} from './model/user.interface';
 import {UserService} from "./services/user/user.service";
-import {EMPTY, Observable, of} from "rxjs";
+import {Observable} from "rxjs";
 
 @Component({
   selector: 'news-root',
@@ -11,13 +11,13 @@ import {EMPTY, Observable, of} from "rxjs";
 export class AppComponent {
   title = 'news-app';
 
-  user$: Observable<User | null> = of(null);
+  user$: Observable<User | null> = this.userService.getUser();
 
   constructor(private readonly userService: UserService) {
   }
 
   onLoginClicked() {
-    this.user$ = this.userService.getUser();
+    this.userService.loadUser();
   }
 
 }
