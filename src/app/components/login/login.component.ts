@@ -1,5 +1,8 @@
 import {Component} from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
+import {UserService} from "../../services/user/user.service";
+import {Location} from "@angular/common";
+import {ActivatedRoute, Router} from "@angular/router";
 
 @Component({
   selector: 'news-login',
@@ -13,11 +16,21 @@ export class LoginComponent {
     password: this.formBuilder.control('', [Validators.required])
   })
 
-  constructor(private readonly formBuilder: FormBuilder) {
+  constructor(private readonly formBuilder: FormBuilder,
+              private readonly userService: UserService,
+              private readonly location: Location) {
   }
 
   onSubmit() {
     console.log(this.loginForm.value);
+    if(this.loginForm.valid) {
+      this.userService.loadUser();
+      this.location.back();
+    }
+  }
+
+  onCancel() {
+    this.location.back();
   }
 
 }
