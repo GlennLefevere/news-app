@@ -22,8 +22,8 @@ export class LoginComponent {
   }
 
   onSubmit() {
-    console.log(this.loginForm.value);
     if(this.loginForm.valid) {
+      this.userService.setCredentials(this.loginForm.value);
       this.userService.loadUser();
       this.location.back();
     }

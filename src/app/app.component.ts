@@ -1,8 +1,9 @@
 import {Component} from '@angular/core';
 import {User} from './model/user.interface';
 import {UserService} from "./services/user/user.service";
-import {Observable} from "rxjs";
+import {Observable, of} from "rxjs";
 import {ActivatedRoute, Router} from "@angular/router";
+import {catchError} from "rxjs/operators";
 
 @Component({
   selector: 'news-root',
