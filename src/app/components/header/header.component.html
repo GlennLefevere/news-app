@@ -15,9 +15,9 @@
   </div>
 
   <div class="d-flex py-2" *ngIf="!user; else userName">
-    <button type="button" class="btn btn-outline-light mr-2" (click)="onLoginClicked($event)">Log In
+    <button type="button" class="btn btn-outline-light me-2" (click)="onLoginClicked($event)">Log In
     </button>
-    <button type="button" class="btn btn-outline-primary mr-2">Sign up</button>
+    <button type="button" class="btn btn-outline-primary me-2">Sign up</button>
   </div>
   <ng-template #userName>
     <div class="align-self-center py-3 mr-4">
